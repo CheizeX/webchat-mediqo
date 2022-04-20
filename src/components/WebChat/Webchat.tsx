@@ -271,6 +271,7 @@ export const WebChat: FC<webchatProps> = function () {
       sessionStorage.removeItem('chatId');
       sessionStorage.removeItem('webchat_elipse_name');
       sessionStorage.removeItem('webchat_elipse_email');
+      sessionStorage.removeItem('webchat_elipse_agent_name');
       setConversationFinished(true);
       setAgentName('');
     });
