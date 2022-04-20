@@ -267,6 +267,8 @@ export const WebChat: FC<webchatProps> = function () {
     });
 
     socket?.on('finishConversationForWebchat', () => {
+      setName('');
+      setEmail('');
       setMessages([]);
       sessionStorage.removeItem('chatId');
       sessionStorage.removeItem('webchat_elipse_name');
