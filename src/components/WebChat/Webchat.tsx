@@ -169,8 +169,10 @@ export const WebChat: FC<webchatProps> = function () {
               );
               setMessages(response.data.result.messages);
               sessionStorage.removeItem('allAgentsBusy');
+              sessionStorage.removeItem('outOfHour');
             } else {
               sessionStorage.removeItem('allAgentsBusy');
+              sessionStorage.removeItem('outOfHour');
               setMessages(response.data.result);
             }
           } else if (response?.data.errorMessage) {
@@ -183,6 +185,7 @@ export const WebChat: FC<webchatProps> = function () {
             }
 
             if (errorMess === 'Out of time') {
+              sessionStorage.setItem('outOfHour', 'true');
               setOutOfHourWarning(true);
             }
           } else {
@@ -367,6 +370,7 @@ export const WebChat: FC<webchatProps> = function () {
           {sessionStorage.getItem('webchat_elipse_name') &&
             sessionStorage.getItem('webchat_elipse_email') &&
             !sessionStorage.getItem('allAgentsBusy') &&
+            !sessionStorage.getItem('outOfHour') &&
             toggleBotWithAgent && (
               <>
                 <ChatBox
@@ -410,7 +414,8 @@ export const WebChat: FC<webchatProps> = function () {
 
           {(!sessionStorage.getItem('webchat_elipse_name') ||
             !sessionStorage.getItem('webchat_elipse_email') ||
-            sessionStorage.getItem('allAgentsBusy')) &&
+            sessionStorage.getItem('allAgentsBusy') ||
+            sessionStorage.getItem('outOfHour')) &&
             toggleBotWithAgent && (
               <ChatBoxForm
                 email={email}
