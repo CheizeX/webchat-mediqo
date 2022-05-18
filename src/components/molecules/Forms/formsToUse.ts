@@ -26,3 +26,10 @@ export const formulario2 = [
     placeholder: 'Ej: 3',
   },
 ];
+export const formulario3 = [
+  {
+    name: 'Teléfono',
+    type: FormTypes.TEL,
+    placeholder: 'Ej: +54 9 11-2233-4455',
+  },
+];

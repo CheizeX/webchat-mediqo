@@ -51,8 +51,15 @@ export const ChatBoxForm: FC<webchatProps & BotBoxProps> = function ({
   const handleSendButton = async () => {
     // validateBusinessTime();
     await handleSetNameAndEmailOnStorage();
+    // if (!sessionStorage.getItem('chatId')) {
+    //   handleSendMessage(formFieldsAndAutomatedMessages || automatedMessages);
+    // }
     if (!sessionStorage.getItem('chatId')) {
-      handleSendMessage(formFieldsAndAutomatedMessages || automatedMessages);
+      if (formFieldsAndAutomatedMessages.length === 0) {
+        handleSendMessage(automatedMessages);
+      } else {
+        handleSendMessage(formFieldsAndAutomatedMessages);
+      }
     }
   };
 

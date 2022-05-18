@@ -1,4 +1,8 @@
-import { formulario1, formulario2 } from './molecules/Forms/formsToUse';
+import {
+  formulario1,
+  formulario2,
+  formulario3,
+} from './molecules/Forms/formsToUse';
 import { ContentTypes, DERIVATIONS, MessageFrom } from './shared';
 
 export const initialMessage = [
@@ -26,17 +30,17 @@ export const suggestionsObjNew = [
           {
             name: 'Tengo dudas sobre la facturación',
             derivation: DERIVATIONS.FORM,
-            derivationForm: formulario2,
+            derivationForm: formulario3,
           },
           {
             name: 'No funciona mi plataforma',
             derivation: DERIVATIONS.FORM,
-            derivationForm: formulario2,
+            derivationForm: formulario3,
           },
           {
             name: 'Necesito hablar con HELP DESK',
             derivation: DERIVATIONS.FORM,
-            derivationForm: formulario2,
+            derivationForm: formulario3,
           },
         ],
       },
