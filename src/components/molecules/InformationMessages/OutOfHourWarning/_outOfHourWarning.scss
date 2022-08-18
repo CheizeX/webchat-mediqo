@@ -27,18 +27,18 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 20.8px;
   color: $gray-10;
   font-weight: 400;
-  line-height: 1.5625rem;
+  line-height: 25px;
   align-self: center;
-  border-radius: 0.625rem;
-  border: 0.3125rem solid $gray-10;
-  padding: 0.625rem 2.5rem;
+  border-radius: 10px;
+  border: 5px solid $gray-10;
+  padding: 10px 40px;
   & > div {
-    width: 3.125rem;
-    height: 3.125rem;
-    box-shadow: 0rem 0.0625rem 0.3125rem 0rem rgba(0, 0, 0, 0.473);
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.473);
     border-radius: 50%;
     background: $main;
 
@@ -49,21 +49,21 @@
   }
 
   .button-close-out-of-our__ewc-class {
-    width: 3.75rem;
-    height: 2.5rem;
+    width: 60px;
+    height: 40px;
     background-color: $gray-10;
     border: none;
     outline: none;
-    border-radius: 0.625rem;
-    box-shadow: 0rem 0.0625rem 0.3125rem 0rem rgba(0, 0, 0, 0.473);
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.473);
     color: $main;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 700;
     &:hover {
       background-image: linear-gradient(160deg, $main 0%, $secondary 120%);
       color: $gray-10;
       cursor: pointer;
-      border: 0.125rem solid $gray-10;
+      border: 2px solid $gray-10;
     }
   }
 }

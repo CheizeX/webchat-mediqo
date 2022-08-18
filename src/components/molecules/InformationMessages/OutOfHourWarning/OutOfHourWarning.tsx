@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC } from 'react';
 import Warning from '../../../../assets/warning.svg';
 import { webchatProps } from '../../../WebChat/webchat.interface';

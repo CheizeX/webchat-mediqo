@@ -8,8 +8,6 @@ export interface webchatProps {
   uploadActive?: boolean;
   sendingMessage?: boolean;
   chatInputDialogue?: string;
-  name?: string;
-  email?: string;
   socket?: Socket;
   validationErrors?: string;
   isCollapsed?: boolean;
@@ -18,7 +16,13 @@ export interface webchatProps {
   svgBack?: any;
   automatedMessages?: Message[];
   outOfHourWarning?: boolean;
+  formValues?: { [key: string]: string };
   outOfHourMessage?: string;
+  isSoundIconActive?: boolean;
+  activeSound?: boolean;
+  events?: string;
+  setEvents?: Dispatch<SetStateAction<string>>;
+  setIsSoundIconActive?: Dispatch<SetStateAction<boolean>>;
   setOutOfHourMessage?: Dispatch<SetStateAction<string>>;
   setUploadActive?: Dispatch<SetStateAction<boolean>>;
   setOutOfHourWarning?: Dispatch<SetStateAction<boolean>>;
@@ -29,9 +33,7 @@ export interface webchatProps {
   setConversationFinished?: Dispatch<SetStateAction<boolean>>;
   setBusyAgents?: Dispatch<SetStateAction<boolean>>;
   setIsCollapsed?: Dispatch<SetStateAction<boolean>>;
-  setName?: Dispatch<SetStateAction<string>>;
-  setEmail?: Dispatch<SetStateAction<string>>;
-  setRUT?: Dispatch<SetStateAction<string>>;
+  setFormValues?: Dispatch<SetStateAction<{ [key: string]: string }>>;
   handleCollapse?: () => void;
   handleSendMessage?: (arg?: Message[], texto?: string) => void;
 }

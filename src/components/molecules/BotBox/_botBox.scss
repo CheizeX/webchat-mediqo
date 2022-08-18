@@ -2,16 +2,15 @@
   height: 75%;
   width: 100%;
   background-color: $gray-10;
-  margin-top: 0.4375rem;
-  padding-top: 0.625rem;
-  font-size: 0.75rem;
+  margin-top: 7px;
+  padding-top: 10px;
+  font-size: 12px;
   font-family: 'Roboto', sans-serif;
   color: $gray-2;
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
-  box-shadow: 0rem 0.0625rem 0.5125rem 0rem rgba(0, 0, 0, 0.704);
+  box-shadow: 0px 1px 8.2px 0px rgba(0, 0, 0, 0.704);
   .dialogues-box__bot-ewc-class {
-    // padding: 0.5rem;
     max-height: 100%;
     overflow: scroll;
     &::-webkit-scrollbar {
@@ -21,26 +20,26 @@
       display: flex;
       align-items: left;
       width: 100%;
-      margin: 0.3125rem 0;
-      margin-left: 0.3125rem;
+      margin: 5px 0;
+      margin-left: 5px;
       .bot-image-container__bot-ewc-class {
         word-wrap: break-word;
         width: fit-content;
         min-width: 24px;
         .bot-image__bot-ewc-class {
-          width: 1.5625rem;
-          height: 1.5625rem;
-          border-radius: 1.6875rem;
-          margin-right: 0.3125rem;
+          width: 25px;
+          height: 25px;
+          border-radius: 27px;
+          margin-right: 5px;
         }
         .avatar-chat__ewc-class {
-          width: 1.5625rem;
-          height: 1.5625rem;
-          border-radius: 1.6875rem;
-          margin-right: 0.3125rem;
+          width: 25px;
+          height: 25px;
+          border-radius: 27px;
+          margin-right: 5px;
           border: 1px solid $gray-9;
           background-image: linear-gradient(140deg, $main 0%, $secondary 150%);
-          box-shadow: 0 0.0625rem 0.1rem 0.0625rem rgba($main, 0.3);
+          box-shadow: 0 1px 1.6px 1px rgba($main, 0.3);
         }
       }
       .bot-text-container__bot-ewc-class {
@@ -51,13 +50,54 @@
         color: $gray-9;
         margin-bottom: 10px;
         -ms-word-break: break-all;
-        // manejo del quiebre de palabras
         word-break: break-all;
         word-break: break-word;
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto;
+        .bot-text-link__bot-ewc-class {
+          transition: all 0.2s ease-in-out;
+          background-image: linear-gradient(140deg, $secondary 0%, $main 180%);
+
+          color: $gray-10;
+          border-radius: 17px;
+          box-shadow: 0px 1.8px 4.04px 0px rgba(0, 0, 0, 0.294);
+          font-weight: 500;
+          font-size: 12px;
+          padding-right: 12px;
+          margin-right: 10px;
+          min-height: 35px;
+          width: fit-content;
+          max-width: 100%;
+          border: 2px solid $gray-10;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          align-self: flex-end;
+          padding: 10px;
+          text-decoration: none;
+          &:hover {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            background-image: linear-gradient(
+              140deg,
+              $secondary 0%,
+              $secondary 180%
+            );
+          }
+          & > svg {
+            align-self: center;
+            width: 20px;
+            height: 20px;
+            height: 100%;
+            position: relative;
+            top: calc(50% - 10px);
+            left: 0px;
+            margin-right: 10px;
+          }
+        }
         .bot-text__bot-ewc-class {
           font-weight: 400;
           position: relative;
@@ -65,16 +105,16 @@
           display: flex;
           align-items: center;
           text-align: left;
-          min-height: 1.875rem;
-          padding: 0.625rem;
-          border-radius: 0.3125rem;
-          border-top-left-radius: 0rem;
+          min-height: 30px;
+          padding: 10px;
+          border-radius: 5px;
+          border-top-left-radius: 0px;
           background-color: $main;
           background-image: linear-gradient(160deg, $main 0%, $secondary 130%);
-          max-width: 14.375rem;
+          max-width: 290px;
           & > img {
             width: 100%;
-            border-radius: 0.3125rem;
+            border-radius: 5px;
           }
           & > a {
             text-decoration: none;
@@ -89,10 +129,10 @@
     .bot-time__bot-ewc-class {
       color: $gray-4;
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin-left: 2.125rem;
-      margin-bottom: 0.625rem;
-      font-size: 0.625rem;
-      padding: 0.1875rem 0.3125rem;
+      margin-left: 34px;
+      margin-bottom: 10px;
+      font-size: 10px;
+      padding: 3px 5px;
       width: fit-content;
     }
 
@@ -100,7 +140,7 @@
       display: flex;
       align-items: right;
       width: 90%;
-      margin: 0.3125rem 0;
+      margin: 5px 0;
       margin-left: 10%;
       justify-content: flex-end;
       .user-dialogue-container__bot-ewc-class {
@@ -117,35 +157,32 @@
         border: none;
         background-color: $gray-9;
         color: $gray-3;
-        border-radius: 0.625rem;
-        border-top-right-radius: 0rem;
-        margin-right: 0.3125rem;
-        padding: 0.625rem;
+        border-radius: 10px;
+        border-top-right-radius: 0px;
+        margin-right: 5px;
+        padding: 10px;
         display: flex;
-        // max-width: 14.375rem;
         align-items: flex-end;
         justify-content: center;
-        // text-align: left;
-        // padding-left: 0.9375rem;
         margin-bottom: 10px;
         & img {
           width: 100%;
-          border-radius: 0.3rem;
-          border: 0.0625rem solid $gray-9;
+          border-radius: 4.8px;
+          border: 1px solid $gray-9;
         }
       }
       .user-maximize-and-download-container__bot-ewc-class {
         align-items: flex-start;
         position: absolute;
-        top: -0.01rem;
-        left: -0.01rem;
+        top: -0.16px;
+        left: -0.16px;
         & * {
           fill: $main;
         }
         & button {
           background-color: $gray-9;
-          border-top-left-radius: 1rem;
-          border-bottom-left-radius: 1rem;
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px;
         }
       }
     }
@@ -161,16 +198,16 @@
     .user-time__bot-ewc-class {
       color: $gray-4;
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin-bottom: 0.625rem;
-      font-size: 0.625rem;
+      margin-bottom: 10px;
+      font-size: 10px;
       text-align: right;
-      margin-right: 0.625rem;
+      margin-right: 10px;
     }
     .auto-time__bot-ewc-class {
       color: $gray-5;
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin-bottom: 0.625rem;
-      font-size: 0.625rem;
+      margin-bottom: 10px;
+      font-size: 10px;
       text-align: left;
       margin-left: 10px;
     }
@@ -178,13 +215,13 @@
 }
 
 .chat-box-without-name-and-RUT__bot-ewc-class {
-  height: 24rem;
+  height: 384px;
   margin-top: 7px;
   width: 100%;
-  border-bottom-left-radius: 0.9375rem;
-  border-bottom-right-radius: 0.9375rem;
-  box-shadow: 0 -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.226);
-  font-size: 0.75rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.226);
+  font-size: 12px;
   font-family: 'Roboto', sans-serif;
   color: $gray-2;
   text-align: center;
@@ -204,12 +241,12 @@
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
       font-weight: 700;
-      font-size: 1.625rem;
-      padding: 1.25rem 0 0.625rem 0;
+      font-size: 26px;
+      padding: 20px 0 10px 0;
     }
     .without-information__bot-ewc-class {
-      font-size: 0.875rem;
-      padding: 0 1.25rem;
+      font-size: 14px;
+      padding: 0 20px;
     }
   }
   .without-body__bot-ewc-class {
@@ -220,30 +257,30 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom-left-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     .inp-control__bot-ewc-class {
       width: 90%;
-      height: 2.5rem;
-      border: 0.0625rem solid $gray-9;
-      border-radius: 0.3125rem;
-      padding-left: 0.625rem;
+      height: 40px;
+      border: 1px solid $gray-9;
+      border-radius: 5px;
+      padding-left: 10px;
       color: $gray-3;
       &::placeholder {
         color: $gray-6;
-        padding-left: 0.3125rem;
+        padding-left: 5px;
       }
       &:focus {
-        outline: 0.125rem solid rgba($main, 0.7);
+        outline: 2px solid rgba($main, 0.7);
       }
     }
     .inp-control-error__bot-ewc-class {
-      outline: 0.125rem solid $main-hover;
+      outline: 2px solid $main-hover;
     }
     .error-message__bot-ewc-class {
       color: $main;
       width: 90%;
-      height: 1.25rem;
+      height: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -252,14 +289,14 @@
     .but-control__bot-ewc-class {
       width: 90%;
       font-family: 'Roboto', sans-serif;
-      height: 2.5rem;
-      border: 0.0625rem solid $gray-9;
+      height: 40px;
+      border: 1px solid $gray-9;
       color: $gray-9;
       font-weight: 700;
-      font-size: 0.875rem;
-      border-radius: 0.3125rem;
+      font-size: 14px;
+      border-radius: 5px;
       cursor: pointer;
-      margin-top: 0rem;
+      margin-top: 0px;
       background-image: linear-gradient(165deg, $main 0%, $secondary 70%);
       background-size: 200% 100%;
       &:hover {
@@ -287,7 +324,7 @@
   height: 100%;
   top: 0;
   right: -2px;
-  border-radius: 0.125rem;
+  border-radius: 2px;
   background-color: transparent;
   cursor: default;
   padding: 5px 0;
@@ -295,9 +332,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 0.125rem;
+    width: 28.8px;
+    height: 28.8px;
+    border-radius: 2px;
     border: none;
     background-color: transparent;
     :hover {
@@ -311,8 +348,8 @@
   }
 
   .bot-file-maximize__bot-ewc-class {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 19.2px;
+    height: 19.2px;
     border: none;
 
     & svg {
@@ -320,8 +357,8 @@
     }
   }
   .bot-file-download__bot-ewc-class {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 19.2px;
+    height: 19.2px;
     border: none;
     & svg {
       background-color: rgba($main-hover, 0.9);
@@ -348,7 +385,7 @@
     z-index: 99998;
     width: 95%;
     height: 100%;
-    border-radius: 0.325rem;
+    border-radius: 5.2px;
     background-color: $gray-10;
     background-size: cover;
     background-position: center;
@@ -361,8 +398,8 @@
     position: absolute;
     top: 1.5%;
     right: 1%;
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 44.8px;
+    height: 44.8px;
     background-color: transparent;
     border: none;
     :hover {
@@ -370,7 +407,7 @@
       padding: 5px;
       background-color: rgba($gray-10, 0.9);
       cursor: pointer;
-      box-shadow: 0 0 1rem rgba($gray-10, 0.8);
+      box-shadow: 0 0 16px rgba($gray-10, 0.8);
     }
     & svg {
       width: 100%;
@@ -385,20 +422,20 @@
 }
 
 .bot-svg-and-icon__bot-ewc-class {
-  width: 1.7625rem;
-  height: 1.7625rem;
+  width: 28.2px;
+  height: 28.2px;
   border-radius: 50%;
   & > div {
-    width: 1.7625rem;
-    height: 1.7625rem;
+    width: 28.2px;
+    height: 28.2px;
     border-radius: 50%;
     background-color: $main;
-    width: 1.5625rem;
-    height: 1.5625rem;
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    // box-shadow: 0 0rem 0.125rem rgba($gray-1, 0.9);
+    // box-shadow: 0 0px 2px rgba($gray-1, 0.9);
     // border: 1px solid $gray-10;
     // outline: 1px solid $gray-7;
     & > svg {
@@ -411,15 +448,6 @@
 }
 
 .automatized-text-container__bot-ewc-class {
-  // position: sticky;
-  // bottom: 0px;
-  // background-image: linear-gradient(
-  //   to top,
-  //   rgb(255, 255, 255),
-  //   rgba(255, 255, 255, 0.741)
-  // );
-  // border-radius: 10px;
-  // border-top: 1px solid $gray-9;
   display: flex;
   width: 100%;
   padding: 5px 0 0 0;
@@ -433,7 +461,7 @@
     color: $gray-10;
     border: 2px solid $gray-10;
     border-radius: 17px;
-    box-shadow: 0rem 0.0625rem 0.1525rem 0rem rgba(0, 0, 0, 0.387);
+    box-shadow: 0px 1px 2.44px 0px rgba(0, 0, 0, 0.387);
     font-weight: 500;
     font-size: 12px;
     padding: 5px 15px;
@@ -451,7 +479,7 @@
       transition: all 0.2s ease-in-out;
       cursor: pointer;
       background-image: linear-gradient(140deg, $main 0%, $main 180%);
-      box-shadow: 0rem 0.0625rem 0.6rem 0rem $main;
+      box-shadow: 0px 1px 9.6px 0px $main;
     }
 
     & > div {
@@ -491,7 +519,7 @@
   // background-color: $secondary;
   color: $gray-10;
   border-radius: 17px;
-  box-shadow: 0rem 0.1125rem 0.2525rem 0rem rgba(0, 0, 0, 0.294);
+  box-shadow: 0px 1.8px 4.04px 0px rgba(0, 0, 0, 0.294);
   font-weight: 500;
   font-size: 12px;
   padding: 0 8px;
@@ -511,7 +539,42 @@
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     background-image: linear-gradient(140deg, $secondary 0%, $secondary 180%);
-    // box-shadow: 0rem 0.0625rem 0.6rem 0rem $main;
+    // box-shadow: 0px 1px 9.6px 0px $main;
+  }
+
+  & svg {
+    padding-top: 1px;
+    margin-right: 7px;
+    height: 24px;
+    width: 24px;
+  }
+}
+.automatized-text-go-with-agent__bot-ewc-class {
+  transition: all 0.2s ease-in-out;
+  background-image: linear-gradient(140deg, $secondary 0%, $main 180%);
+  color: $gray-10;
+  border-radius: 17px;
+  box-shadow: 0px 1.8px 4.04px 0px rgba(0, 0, 0, 0.294);
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0 8px;
+  padding-right: 12px;
+  margin-right: 10px;
+  margin-top: 0px;
+  height: 35px;
+  width: fit-content;
+  max-width: 100%;
+  border: 2px solid $gray-10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-image: linear-gradient(140deg, $secondary 0%, $secondary 180%);
+    // box-shadow: 0px 1px 9.6px 0px $main;
   }
 
   & svg {

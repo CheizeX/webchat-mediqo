@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, KeyboardEvent } from 'react';
 import { SpinnerDotted } from 'spinners-react';
+import { IoIosAttach } from 'react-icons/io';
 import { webchatProps } from '../../WebChat/webchat.interface';
 import { UploadFiles } from '../UploadFiles/UploadFiles';
 
@@ -46,11 +47,7 @@ export const InputsBox: FC<webchatProps> = function ({
             ? 'upload-button__ewc-class upload-active__ewc-class'
             : 'upload-button__ewc-class'
         }>
-        <img
-          className="file-icon__ewc-class"
-          src={svgBack.SendButton}
-          alt="file"
-        />
+        <IoIosAttach className="file-icon__ewc-class" />
       </button>
       {uploadActive && (
         <UploadFiles

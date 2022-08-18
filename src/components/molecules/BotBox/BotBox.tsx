@@ -9,10 +9,10 @@ import React, {
   Fragment,
 } from 'react';
 import { ReactSVG } from 'react-svg';
-import { MdAssignmentReturn } from 'react-icons/md';
+import { MdAssignmentReturn, MdOutlineSupportAgent } from 'react-icons/md';
 import { SpinnerRoundFilled } from 'spinners-react';
 import { GrFormClose } from 'react-icons/gr';
-import axios, { AxiosRequestConfig } from 'axios';
+import { GiClick } from 'react-icons/gi';
 import {
   ContentTypes,
   DERIVATIONS,
@@ -23,12 +23,11 @@ import {
 } from '../../shared';
 import { suggestionsObjNew } from '../../extra';
 import { webchatProps } from '../../WebChat/webchat.interface';
-import { Forms } from '../Forms/Forms';
+import { Forms } from '../BotForms/BotForms';
 
 interface BotBoxProps {
   automatedMessages: Message[];
   setToggleBotWithAgent: Dispatch<SetStateAction<boolean>>;
-  setConfirmation: Dispatch<SetStateAction<boolean>>;
   setAutomatedMessages: Dispatch<SetStateAction<Message[]>>;
   setFormFieldsAndAutomatedMessages: Dispatch<SetStateAction<Message[]>>;
 }
@@ -39,7 +38,6 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
   setToggleBotWithAgent,
   setAutomatedMessages,
   setFormFieldsAndAutomatedMessages,
-  setConfirmation,
 }) {
   const dialogueBoxRef = useRef<HTMLDivElement>(null);
   const [loadingMessage, setLoadingMessage] = useState(false);
@@ -89,17 +87,16 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
       setLoadingMessage(false);
       scrollToBottom();
       setToggleBotWithAgent(true);
-      // setConfirmation(true);
     }
   };
 
-  const handleDerivation = (derivation: DERIVATIONS, suggestion?: any) => {
+  const handleDerivation = (derivation: DERIVATIONS) => {
     setAutomatedMessages([
       ...automatedMessages,
       {
         contentType: ContentTypes.TEXT,
         from: MessageFrom.BOT,
-        content: 'Derivación a agente',
+        content: 'Proceso de derivación hacia un agente',
       },
     ]);
     setTimeout(() => {
@@ -115,7 +112,11 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
     const currentTime = new Date();
     localStorage.setItem('lastTime', JSON.stringify(currentTime.getTime()));
 
-    const newSuggestions = suggestion.subItems?.filter((item: any) => item);
+    // SI NO HAY OPCIONES, ENTONCES DEVUELVE EL RESTO DE LAS SUGERENCIAS EXCEPTO LA QUE ELIGIO EL USUARIO, DE LO CONTRARIO DEVUELVE UN ARRAY [] VACIO PARA QUE SOLO MUESTRE LAS OPCIONES Y NO EL RESTO DE LAS SUGERENCIAS
+    const newSuggestions = !suggestion.options
+      ? suggestion.subItems?.filter((item: any) => item)
+      : [];
+
     if (newSuggestions) {
       setSuggestions(newSuggestions);
     } else {
@@ -124,6 +125,7 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
       );
     }
 
+    // VERIFICA SI HAY DERIVACIONES AL AGENTE O CON PREVIO FORMULARIO
     if (suggestion.derivation) {
       if (suggestion.derivation === DERIVATIONS.AGENT) {
         setLoadingMessage(true);
@@ -137,6 +139,7 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
       return;
     }
 
+    // AGREGA LA PREGUNTA
     if (suggestion.question) {
       setLoadingMessage(true);
       setTimeout(() => {
@@ -155,7 +158,7 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
         ]);
         setLoadingMessage(false);
         scrollToBottom();
-      }, 2000);
+      }, 500);
     } else {
       setAutomatedMessages([
         ...automatedMessages,
@@ -167,6 +170,7 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
       ]);
     }
 
+    // AGREGA LAS OPCIONES PARA ELEGIR DESPUED DE LA PREGUNTA
     if (!suggestion.subItems) {
       setLoadingMessage(true);
       setTimeout(() => {
@@ -188,7 +192,7 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
         ]);
         setLoadingMessage(false);
         scrollToBottom();
-      }, 2000);
+      }, 500);
       setLastTime(localStorage.getItem('lastTime'));
     }
   };
@@ -232,20 +236,26 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
                           ? 'bot-text-container__bot-ewc-class clickable-bot__bot-ewc-class'
                           : 'bot-text-container__bot-ewc-class'
                       }>
-                      <span className="bot-text__bot-ewc-class">
-                        {/* SI EL BOTON INCLUYE UN LINK, VA A SER CLICKEABLE EL DIALOGO DEL BOT Y ME VA A REDIRECCIONAR */}
-                        {message.contentType === ContentTypes.TEXT &&
-                        message.link ? (
+                      {/* SI EL MENSAJE INCLUYE UN LINK, VA A SER CLICKEABLE EL DIALOGO DEL BOT Y ME VA A REDIRECCIONAR */}
+                      {message.contentType === ContentTypes.TEXT &&
+                        message.link && (
                           <a
+                            className="bot-text-link__bot-ewc-class"
                             href={message.link}
                             target="_blank"
                             rel="noreferrer">
+                            <GiClick size={24} />
                             {message.content}
                           </a>
-                        ) : (
-                          message.content
                         )}
-                      </span>
+
+                      {/* SI EL MENSAJE NO INCLUYE EL LINK MUESTRA EL TEXTO */}
+                      {message.contentType === ContentTypes.TEXT &&
+                        !message.link && (
+                          <span className="bot-text__bot-ewc-class">
+                            {message.content}
+                          </span>
+                        )}
                     </div>
                   </div>
                 </div>
@@ -328,21 +338,39 @@ export const BotBox: FC<webchatProps & BotBoxProps> = function ({
               </div>
             )}
 
-            {/* BOTON DE MENU PRINCIPAL AL FINAL DE LAS OPCIONES */}
+            {/* BOTONES DE MENU PRINCIPAL Y CONTACTAR DIRECTO CON AGENTE AL FINAL DE LAS OPCIONES */}
             {JSON.stringify(suggestions) !==
               JSON.stringify(suggestionsObjNew) && (
-              <button
-                className="automatized-text-back__bot-ewc-class"
-                type="button"
-                onClick={() =>
-                  handleAutomatedMessages({
-                    name: 'Menú Principal',
-                    subItems: suggestionsObjNew,
-                  })
-                }>
-                <MdAssignmentReturn />
-                Menú Principal
-              </button>
+              <>
+                {/* BOTON DE MENU PRINCIPAL */}
+                <button
+                  className="automatized-text-back__bot-ewc-class"
+                  type="button"
+                  onClick={() =>
+                    handleAutomatedMessages({
+                      name: 'Menú Principal',
+                      subItems: suggestionsObjNew,
+                    })
+                  }>
+                  <MdAssignmentReturn />
+                  Menú Principal
+                </button>
+
+                {/* BOTON DE CONTACTO DIRECTO CON UN AGENTE */}
+                <button
+                  className="automatized-text-go-with-agent__bot-ewc-class"
+                  type="button"
+                  onClick={() =>
+                    handleAutomatedMessages({
+                      name: 'Contactarme con un agente',
+                      // subItems: suggestionsObjNew,
+                      derivation: DERIVATIONS.AGENT,
+                    })
+                  }>
+                  <MdOutlineSupportAgent />
+                  ¿Necesitas ayuda?
+                </button>
+              </>
             )}
           </div>
         ) : (

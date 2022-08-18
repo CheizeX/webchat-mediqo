@@ -1,24 +1,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import Warning from '../../../../assets/warning.svg';
-import { Message } from '../../../shared';
 import { webchatProps } from '../../../WebChat/webchat.interface';
 
 interface BotBoxProps {
-  automatedMessages: Message[];
-  formFieldsAndAutomatedMessages: Message[];
-  handleSendMessage: (arg?: Message[]) => void;
   setConfirmation: Dispatch<SetStateAction<boolean>>;
 }
 export const Confirmation: FC<webchatProps & BotBoxProps> = function ({
   setConfirmation,
-  automatedMessages,
-  formFieldsAndAutomatedMessages,
-  handleSendMessage,
 }) {
   const handleClick = () => {
-    console.log('[CONFIR]', formFieldsAndAutomatedMessages);
-    // handleSendMessage(formFieldsAndAutomatedMessages);
     setConfirmation(false);
   };
 

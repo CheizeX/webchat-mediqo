@@ -9,6 +9,8 @@ module.exports = (data) => {
     __dirname,
     '../',
     'ailalia_backend',
+    'dist',
+    'apps',
     'uploads',
     'webchats',
     `${data.companyId}`,
@@ -16,7 +18,7 @@ module.exports = (data) => {
   return {
     entry: './src/index.tsx',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: webchatPath,
       filename: 'bundle.js',
     },
     resolve: {
@@ -55,11 +57,16 @@ module.exports = (data) => {
           use: ['file-loader?name=assets/[name].[ext]'],
           exclude: /node_modules/,
         },
+        {
+          test: /\.mp3$/,
+          type: 'asset/resource',
+        },
       ],
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'public', 'index.html'),
+        favicon: './src/assets/favicon-elipse.svg',
       }),
       new MiniCssExtractPlugin({
         filename: 'styles.css',
@@ -75,6 +82,7 @@ module.exports = (data) => {
           restUrl: JSON.stringify(data.restUrl),
           animation: JSON.stringify(data.animation),
           companyId: JSON.stringify(data.companyId),
+          greeting: JSON.stringify(data.greeting),
         },
       }),
     ],

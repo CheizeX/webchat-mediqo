@@ -1,14 +1,14 @@
 .chat-box__ewc-class {
-  height: 19.125rem;
+  height: 306px;
   width: 100%;
   background-color: $gray-10;
-  margin-top: 0.4375rem;
-  padding-top: 0.625rem;
-  font-size: 0.75rem;
+  margin-top: 7px;
+  padding-top: 10px;
+  font-size: 12px;
   font-family: 'Roboto', sans-serif;
   color: $gray-2;
   .dialogues-box__ewc-class {
-    padding: 0.5rem;
+    padding: 8px;
     max-height: 100%;
     overflow: scroll;
     &::-webkit-scrollbar {
@@ -18,28 +18,28 @@
       display: flex;
       align-items: left;
       width: 70%;
-      margin: 0.3125rem 0;
-      margin-left: 0.3125rem;
+      margin: 5px 0;
+      margin-left: 5px;
       .bot-image-container__ewc-class {
         .bot-image__ewc-class {
-          width: 1.5625rem;
-          height: 1.5625rem;
-          border-radius: 1.6875rem;
+          width: 25px;
+          height: 25px;
+          border-radius: 27px;
           background-color: $main;
           background-image: linear-gradient(140deg, $secondary 0%, $main 150%);
-          margin-right: 0.3125rem;
-          box-shadow: 0 0.0625rem 0.125rem 0.0625rem rgba($secondary, 0.5);
-          border: 0.0625rem solid $gray-9;
+          margin-right: 5px;
+          box-shadow: 0 1px 2px 1px rgba($secondary, 0.5);
+          border: 1px solid $gray-9;
         }
         .agent-image__ewc-class {
-          box-shadow: 0 0.0625rem 0.125rem 0.0625rem rgba($main, 0.5);
-          width: 1.5625rem;
-          height: 1.5625rem;
-          border-radius: 1.6875rem;
+          box-shadow: 0 1px 2px 1px rgba($main, 0.5);
+          width: 25px;
+          height: 25px;
+          border-radius: 27px;
           background-color: $secondary;
-          margin-right: 0.3125rem;
+          margin-right: 5px;
           background-image: linear-gradient(140deg, $main 0%, $secondary 150%);
-          border: 0.0625rem solid $gray-9;
+          border: 1px solid $gray-9;
           color: $gray-10;
           padding: 2px;
         }
@@ -55,16 +55,16 @@
           flex-direction: column;
           display: flex;
           align-items: center;
-          min-height: 1.875rem;
+          min-height: 30px;
           text-align: left;
-          padding: 0.625rem;
-          border-radius: 0.3125rem;
-          border-top-left-radius: 0rem;
+          padding: 10px;
+          border-radius: 5px;
+          border-top-left-radius: 0px;
           background-color: $secondary;
-          max-width: 14.375rem;
+          max-width: 230px;
           & > img {
             width: 100%;
-            border-radius: 0.3125rem;
+            border-radius: 5px;
           }
         }
         .agent-text__ewc-class {
@@ -72,17 +72,17 @@
           flex-direction: column;
           display: flex;
           align-items: center;
-          min-height: 1.875rem;
+          min-height: 30px;
           text-align: left;
-          padding: 0.625rem;
-          border-radius: 0.3125rem;
-          border-top-left-radius: 0rem;
+          padding: 10px;
+          border-radius: 5px;
+          border-top-left-radius: 0px;
           background-color: $main;
           // background-image: linear-gradient(160deg, $main 0%, $secondary 130%);
-          max-width: 14.375rem;
+          max-width: 230px;
           & > img {
             width: 100%;
-            border-radius: 0.3125rem;
+            border-radius: 5px;
           }
         }
       }
@@ -90,10 +90,10 @@
     .bot-time__ewc-class {
       color: $gray-4;
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin-left: 2.125rem;
-      margin-bottom: 0.625rem;
-      font-size: 0.625rem;
-      padding: 0.1875rem 0.3125rem;
+      margin-left: 34px;
+      margin-bottom: 10px;
+      font-size: 10px;
+      padding: 3px 5px;
       width: fit-content;
     }
 
@@ -101,7 +101,7 @@
       display: flex;
       align-items: right;
       width: 70%;
-      margin: 0.3125rem 0;
+      margin: 5px 0;
       margin-left: 30%;
       justify-content: flex-end;
       .user-dialogue-container__ewc-class {
@@ -109,34 +109,34 @@
         border: none;
         background-color: $gray-9;
         color: $gray-3;
-        border-radius: 0.625rem;
-        border-top-right-radius: 0rem;
-        margin-right: 0.3125rem;
-        padding: 0.625rem;
+        border-radius: 10px;
+        border-top-right-radius: 0px;
+        margin-right: 5px;
+        padding: 10px;
         display: flex;
-        max-width: 14.375rem;
+        max-width: 230px;
         align-items: flex-start;
         justify-content: center;
         text-align: left;
-        padding-left: 0.9375rem;
+        padding-left: 15px;
         & img {
           width: 100%;
-          border-radius: 0.3rem;
-          border: 0.0625rem solid $gray-9;
+          border-radius: 4.8px;
+          border: 1px solid $gray-9;
         }
       }
       .user-maximize-and-download-container__ewc-class {
         align-items: flex-start;
         position: absolute;
-        top: -0.01rem;
-        left: -0.01rem;
+        top: -0.16px;
+        left: -0.16px;
         & * {
           fill: $main;
         }
         & button {
           background-color: $gray-9;
-          border-top-left-radius: 1rem;
-          border-bottom-left-radius: 1rem;
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px;
         }
       }
     }
@@ -152,32 +152,33 @@
     .user-time__ewc-class {
       color: $gray-4;
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin-bottom: 0.625rem;
-      font-size: 0.625rem;
+      margin-bottom: 10px;
+      font-size: 10px;
       text-align: right;
-      margin-right: 0.625rem;
+      margin-right: 10px;
     }
   }
 }
 
 .chat-box-without-name-and-RUT__ewc-class {
-  height: 24rem;
+  height: 384px;
   margin-top: 6px;
   width: 100%;
-  border-bottom-left-radius: 0.9375rem;
-  border-bottom-right-radius: 0.9375rem;
-  box-shadow: 0 -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.226);
-  font-size: 0.75rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.226);
+  font-size: 12px;
   font-family: 'Roboto', sans-serif;
   color: $gray-2;
   text-align: center;
   // outline: none;
   .without-header__ewc-class {
     background-color: $gray-10;
-    height: 30.2%;
+    height: 70px;
     width: 100%;
     margin: 0 auto;
     color: $gray-4;
+    padding-top: 10px;
     .without-welcome__ewc-class {
       background-image: linear-gradient(135deg, $main 0%, $secondary 120%);
       background-size: 100%;
@@ -187,67 +188,78 @@
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
       font-weight: 700;
-      font-size: 1.625rem;
-      padding: 1.25rem 0 0.625rem 0;
+      font-size: 26px;
+      padding: 6.4px 0 1.6px 0;
     }
     .without-information__ewc-class {
-      font-size: 0.875rem;
-      padding: 0 1.25rem;
+      font-size: 12.8px;
+      padding: 0 20px;
     }
   }
   .without-body__ewc-class {
-    height: 70%;
+    height: 310px;
     width: 100%;
     background-color: $gray-10;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom-left-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    .without-body-inputs-box-container__ewc-class {
+      width: 100%;
+      // poner un height de 100% para que no se vea el border
+      height: 215px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
     .inp-control__ewc-class {
       width: 90%;
-      height: 2.5rem;
-      border: none;
-      border-radius: 0.3125rem;
-      padding-left: 0.625rem;
+      height: 40px;
+      border: 1px solid $gray-8;
+      border-radius: 5px;
+      padding-left: 10px;
       color: $gray-3;
       &::placeholder {
         color: $gray-6;
-        padding-left: 0.3125rem;
+        padding-left: 5px;
       }
       &:focus {
-        border: 0.125rem solid rgba($main, 0.7);
+        border: 2px solid rgba($main, 0.7);
         outline: none;
       }
     }
     .inp-control-error__ewc-class {
-      border: 0.125rem solid $main-hover;
+      border: 2px solid $main-hover;
     }
     .error-message__ewc-class {
       color: $main;
       width: 90%;
-      height: 1.25rem;
+      height: 0px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 500;
     }
     .but-control__ewc-class {
+      position: relative;
+      bottom: 2px;
       width: 90%;
       font-family: 'Roboto', sans-serif;
-      height: 2.5rem;
-      border: 0.0625rem solid $gray-9;
+      height: 40px;
+      border: 1px solid $gray-9;
       color: $gray-9;
       font-weight: 700;
-      font-size: 0.875rem;
+      font-size: 14px;
       cursor: pointer;
-      margin-top: 0rem;
+      margin: 0;
       background-image: linear-gradient(165deg, $main 0%, $secondary 70%);
       background-size: 200% 100%;
       display: inline-block;
       border: none;
-      border-radius: 0.3125rem;
+      border-radius: 5px;
       transition: all 0.2s ease-in-out;
       &:hover {
         animation: gradient 3s infinite;
@@ -286,7 +298,7 @@
   height: 100%;
   top: 0;
   right: -2px;
-  border-radius: 0.125rem;
+  border-radius: 2px;
   background-color: transparent;
   cursor: default;
   padding: 5px 0;
@@ -294,9 +306,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 0.125rem;
+    width: 28.8px;
+    height: 28.8px;
+    border-radius: 2px;
     border: none;
     background-color: transparent;
     :hover {
@@ -310,8 +322,8 @@
   }
 
   .bot-file-maximize__ewc-class {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 19.2px;
+    height: 19.2px;
     border: none;
 
     & svg {
@@ -319,8 +331,8 @@
     }
   }
   .bot-file-download__ewc-class {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 19.2px;
+    height: 19.2px;
     border: none;
     & svg {
       background-color: rgba($main-hover, 0.9);
@@ -347,7 +359,7 @@
     z-index: 99998;
     width: 95%;
     height: 100%;
-    border-radius: 0.325rem;
+    border-radius: 5.2px;
     background-color: $gray-10;
     background-size: cover;
     background-position: center;
@@ -360,8 +372,8 @@
     position: absolute;
     top: 1.5%;
     right: 1%;
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 44.8px;
+    height: 44.8px;
     background-color: transparent;
     border: none;
     :hover {
@@ -369,7 +381,7 @@
       padding: 5px;
       background-color: rgba($gray-10, 0.9);
       cursor: pointer;
-      box-shadow: 0 0 1rem rgba($gray-10, 0.8);
+      box-shadow: 0 0 16px rgba($gray-10, 0.8);
     }
     & svg {
       width: 100%;

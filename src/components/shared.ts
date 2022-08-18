@@ -44,7 +44,7 @@ export type Tag = {
 export enum MessageFrom {
   AGENT = 'AGENT',
   USER = 'USER',
-  BOT = 'Bot',
+  BOT = 'BOT',
 }
 
 export type User = {
@@ -116,13 +116,15 @@ export enum DERIVATIONS {
   LINK = 'link',
 }
 export enum FormTypes {
+  NAME = 'name',
+  EMAIL = 'email',
+  TEL = 'tel',
+  ADDRESS = 'address',
+  DNI = 'dni',
+  RUT = 'rut',
   TEXT = 'text',
-  DATE = 'date',
-  TEXTAREA = 'textarea',
   NUMBER = 'number',
   PASSWORD = 'password',
-  // EMAIL = 'email',
-  TEL = 'tel',
 }
 export interface FormProps {
   name: string;
@@ -140,30 +142,3 @@ export interface SuggestionsProps {
   derivationLink?: string;
   derivationForm?: FormProps[];
 }
-
-// TIME AGO --------------
-const DATE_UNITS = {
-  day: 86400,
-  hour: 3600,
-  minute: 60,
-  second: 1,
-};
-
-const getSecondsDiff = (timestamp: number) => (Date.now() - timestamp) / 1000;
-const getUnitAndValueDate = (secondsElapsed: number) => {
-  for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
-    if (secondsElapsed >= secondsInUnit || unit === 'second') {
-      const value = Math.floor(secondsElapsed / secondsInUnit) * -1;
-      return { value, unit };
-    }
-  }
-  return {};
-};
-
-export const getTimeAgo = (timestamp: number) => {
-  const rtf = new Intl.RelativeTimeFormat();
-  const secondsElapsed = getSecondsDiff(timestamp);
-  const { value, unit } = getUnitAndValueDate(secondsElapsed) as any;
-  return rtf.format(value, unit);
-};
-// -----------

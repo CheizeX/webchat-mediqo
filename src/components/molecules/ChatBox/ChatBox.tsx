@@ -11,8 +11,8 @@ import { MessageFrom } from '../../shared';
 
 export const ChatBox: FC<webchatProps> = function ({
   messages,
-  agentName,
   base64Avatar,
+  isCollapsed,
 }) {
   const dialogueBoxRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(false);
@@ -51,16 +51,16 @@ export const ChatBox: FC<webchatProps> = function ({
     setLoading(false);
   };
 
-  useEffect(scrollToBottom, [scrollToBottom, messages]);
+  useEffect(scrollToBottom, [scrollToBottom, messages, isCollapsed]);
 
   return (
     <div className="chat-box__ewc-class">
       <div className="dialogues-box__ewc-class">
         {messages &&
-          messages?.map((message) =>
+          messages?.map((message, index) =>
             message.from === MessageFrom.AGENT ||
             message.from === MessageFrom.BOT ? (
-              <div key={message._id}>
+              <div key={message._id.concat(String(index))}>
                 <div className="bot-dialogue__ewc-class">
                   <div className="bot-image-container__ewc-class">
                     {message.from !== MessageFrom.BOT ? (

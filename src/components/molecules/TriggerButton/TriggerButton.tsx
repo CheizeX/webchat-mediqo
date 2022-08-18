@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { FC } from 'react';
 import { MdOutlineSupportAgent } from 'react-icons/md';
+import { CgMoreO } from 'react-icons/cg';
 import { webchatProps } from '../../WebChat/webchat.interface';
 
 export const TriggerButton: FC<webchatProps> = function ({
@@ -8,21 +9,30 @@ export const TriggerButton: FC<webchatProps> = function ({
   isCollapsed,
   agentName,
   base64Avatar,
+  events,
 }) {
   return (
-    <button
-      type="button"
-      className={!isCollapsed ? 'button-trigger__ewc-class' : 'hidden'}
-      onClick={handleCollapse}>
-      {agentName === '' ? (
-        <img
-          src={`data:image/svg+xml;base64,${base64Avatar}`}
-          className="avatar__ewc-class"
-          alt="avatar"
-        />
-      ) : (
-        <MdOutlineSupportAgent className="assistant-trigger__ewc-class" />
+    <div
+      className={
+        !isCollapsed ? 'button-trigger-container__ewc-class' : 'hidden'
+      }>
+      <button
+        type="button"
+        className="button-trigger__ewc-class"
+        onClick={handleCollapse}>
+        {agentName === '' ? (
+          <img
+            src={`data:image/svg+xml;base64,${base64Avatar}`}
+            className="avatar__ewc-class"
+            alt="avatar"
+          />
+        ) : (
+          <MdOutlineSupportAgent className="assistant-trigger__ewc-class" />
+        )}
+      </button>
+      {events !== '' && (
+        <CgMoreO className="notification-trigger-button__ewc-class" />
       )}
-    </button>
+    </div>
   );
 };

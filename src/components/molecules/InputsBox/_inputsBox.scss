@@ -1,29 +1,29 @@
 .inputs-container__ewc-class {
   width: 100%;
-  height: 4.375rem;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $gray-10;
-  border-top: 0.125rem solid $gray-9;
-  box-shadow: 0 0.3125rem 0.0625rem 0rem rgba(0, 0, 0, 0.226);
-  border-bottom-left-radius: 0.1875rem;
-  border-bottom-right-radius: 1.875rem;
-  padding: 0 0.625rem;
+  border-top: 2px solid $gray-9;
+  box-shadow: 0 5px 1px 0px rgba(0, 0, 0, 0.226);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 30px;
+  padding: 0 10px;
 
   .chat-input__ewc-class {
     color: $gray-2;
     width: 68%;
-    height: 2.5rem;
+    height: 40px;
     outline: none;
-    font-size: 1.25rem;
-    border: 0.125rem solid $gray-9;
-    border-radius: 0.3125rem;
-    padding-left: 0.9375rem;
-    font-size: 0.75rem;
+    font-size: 20px;
+    border: 2px solid $gray-9;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 12px;
     font-family: 'Roboto', sans-serif;
     &::placeholder {
-      padding-left: 0.1875rem;
+      padding-left: 3px;
     }
 
     &:focus {
@@ -32,12 +32,12 @@
     }
   }
   .send-button__ewc-class {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(140deg, $main, $secondary);
-    font-size: 1.25rem;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,7 @@
       cursor: pointer;
       .send-image__ewc-class {
         transition: 0.5s ease all;
-        border: 0.125rem solid $secondary;
+        border: 2px solid $secondary;
         cursor: pointer;
       }
     }
@@ -56,9 +56,9 @@
     }
     .send-image__ewc-class {
       transition: 0.5s ease all;
-      border: 0.1875rem solid rgba($main, 0);
+      border: 3px solid rgba($main, 0);
       padding: 3px;
-      border: 0.125rem solid rgba($secondary, 0.5);
+      border: 2px solid rgba($secondary, 0.5);
       border-radius: 50%;
     }
   }
@@ -71,10 +71,10 @@
 }
 
 .upload-button__ewc-class {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 38.4px;
+  height: 38.4px;
   position: relative;
-  border-radius: 0.3125rem;
+  border-radius: 5px;
   overflow: hidden;
   object-fit: contain;
   background: linear-gradient(140deg, $main, $secondary);
@@ -86,7 +86,7 @@
     // background: linear-gradient(140deg, $secondary, $main);
     cursor: pointer;
     .file-icon__ewc-class {
-      border: 0.125rem solid $secondary;
+      border: 2px solid $secondary;
       cursor: pointer;
     }
   }
@@ -95,11 +95,11 @@
     position: absolute;
     left: 0;
     opacity: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     border: none;
     background-color: $main;
-    font-size: 1.25rem;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,29 +119,31 @@
     }
   }
   .file-icon__ewc-class {
+    width: 85%;
+    height: 85%;
+    padding: 2px;
+    color: $gray-10;
     transition: 0.5s ease all;
-    transform: rotate3d(0, 0, 1, -90deg);
-    // border: 0.1875rem solid rgba($main, 0);
-    border: 0.125rem solid rgba($secondary, 0.3);
+    transform: rotate3d(0, 0, 1, 0deg);
+    border: 2.4px solid rgba($secondary, 0.3);
     border-radius: 50%;
-    padding: 3px;
     &:hover {
       transition: 0.5s ease all;
-      border: 0.125rem solid $secondary;
+      border: 2px solid $secondary;
       cursor: pointer;
     }
   }
 }
 
 .emit__ewc-class {
-  width: 12.5rem;
-  height: 12.5rem;
-  border: 0.0625rem solid red;
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
 }
 
 .upload-active__ewc-class {
   .file-icon__ewc-class {
-    // outline: 0.125rem solid $secondary;
-    transform: rotate3d(0, 0, 1, 90deg);
+    // outline: 2px solid $secondary;
+    transform: rotate3d(0, 0, 1, 180deg);
   }
 }
