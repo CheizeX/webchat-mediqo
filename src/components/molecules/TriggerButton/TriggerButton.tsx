@@ -3,12 +3,13 @@ import React, { FC } from 'react';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import { CgMoreO } from 'react-icons/cg';
 import { webchatProps } from '../../WebChat/webchat.interface';
+import AVATAR from '../../../assets/favicon_mediqo.png';
 
 export const TriggerButton: FC<webchatProps> = function ({
   handleCollapse,
   isCollapsed,
   agentName,
-  base64Avatar,
+  // base64Avatar,
   events,
 }) {
   return (
@@ -22,8 +23,9 @@ export const TriggerButton: FC<webchatProps> = function ({
         onClick={handleCollapse}>
         {agentName === '' ? (
           <img
-            src={`data:image/svg+xml;base64,${base64Avatar}`}
-            className="avatar__ewc-class"
+            // src={`data:image/svg+xml;base64,${base64Avatar}`}
+            src={AVATAR}
+            className="avatar-img__ewc-class"
             alt="avatar"
           />
         ) : (

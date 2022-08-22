@@ -7,6 +7,7 @@ import {
 } from 'react-icons/md';
 import { webchatProps } from '../../WebChat/webchat.interface';
 import { AnimationSvg } from '../AnimationSvg/Animation';
+import AVATAR from '../../../assets/favicon_mediqo.png';
 
 export const Assistant: FC<webchatProps> = function ({
   handleCollapse,
@@ -20,11 +21,14 @@ export const Assistant: FC<webchatProps> = function ({
     <div className="assistant__ewc-class">
       <AnimationSvg />
       {agentName === '' ? (
-        <img
-          src={`data:image/svg+xml;base64,${base64Avatar}`}
-          className="avatar__ewc-class"
-          alt="avatar"
-        />
+        <div className="avatar__ewc-class">
+          <img
+            // src={`data:image/svg+xml;base64,${base64Avatar}`}
+            src={AVATAR}
+            className="avatar-img__ewc-class"
+            alt="avatar"
+          />
+        </div>
       ) : (
         <MdOutlineSupportAgent className="assistant-image__ewc-class" />
       )}

@@ -18,12 +18,22 @@
     background-image: linear-gradient(140deg, $main 0%, $secondary 150%);
   }
   .avatar__ewc-class {
-    background-color: $gray-8;
-    background-image: linear-gradient(140deg, $main 0%, $secondary 150%);
+    background-color: $gray-10;
+    // background-image: linear-gradient(140deg, $main 0%, $secondary 150%);
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    box-shadow: inset 0px 1px 5px 0px rgba($main, 1);
     border: 2px solid $gray-9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .avatar-img__ewc-class {
+      width: 30px;
+      height: 30px;
+      // border-radius: 50%;
+    }
   }
   .titles-container__ewc-class {
     margin-left: 11.2px;

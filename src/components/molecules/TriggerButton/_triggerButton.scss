@@ -13,11 +13,13 @@
     border-radius: 50%;
     height: 80px;
     width: 80px;
-    background: linear-gradient(140deg, $main 0%, $secondary 150%);
+    // background: linear-gradient(140deg, $main 0%, $secondary 150%);
+    background-color: $gray-10;
     border: 2px solid $gray-10;
-    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.185);
+    box-shadow: inset 0px 1px 5px 0px rgba($main, 0.5),
+      0px 2px 5px 2px rgba(0, 0, 0, 0.185);
     &:hover {
-      box-shadow: 0px 0px 5px 1px $main;
+      box-shadow: inset 0px 1px 5px 0px rgba($main, 0.5), 0px 0px 5px 1px $main;
       cursor: pointer;
     }
     .trigger-avatar__ewc-class {
